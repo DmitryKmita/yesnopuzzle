@@ -7,6 +7,21 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('home', { path: '/' });
+
+  this.resource('questions', function() {
+    this.route('new');
+
+    this.resource('question', { path: "/:question_id" }, function() {
+      this.route('edit');
+      this.route('delete');
+
+      this.resource('comments', function() {
+        this.resource('comment', { path: "/:comment_id" }, function() {
+          this.route('answer');
+        });
+      });
+    });
+  });
 });
 
 export default Router;
