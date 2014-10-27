@@ -32,7 +32,15 @@ module.exports = function(app) {
   });
 
   commentsRouter.get('/', function(req, res) {
-    res.send({"comments":comments});
+    if (req.query.question_id) {
+      res.send({
+        "comments": comments.filter(function (comment) {
+          return comment.question === parseInt(req.query.question_id);
+        })
+      });
+    } else {
+      res.send({"comments":comments});
+    }
   });
 
   comments.forEach(function(comment) {

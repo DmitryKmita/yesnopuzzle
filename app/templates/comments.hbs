@@ -1,3 +1,23 @@
-Comments Route
+<div class="y-comments">
+  <ul class="y-comments__ul">
+    {{#each}}
+        <li class="y-comments__li">
+          <div class="y-comment">
+            <div class="y-comment__text">
+                {{#link-to 'comment' this}}{{text}}{{/link-to}} <span class="y-comment__author">by {{author.name}} {{author.surname}}</span>
+            </div>
+
+            <div {{bind-attr class=":y-comment__answer answer::y-comment__answer_waiting"}}>
+              {{#if answer}}
+                  {{answer}}
+              {{else}}
+                  Waiting for answer
+              {{/if}}
+            </div>
+          </div>
+        </li>
+    {{/each}}
+  </ul>
+</div>
 
 {{outlet}}
