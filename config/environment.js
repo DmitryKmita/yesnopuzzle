@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'yesnopuzzle',
     environment: environment,
@@ -16,6 +16,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none' 'frame-src'",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline'",
+      'font-src': "'self' *.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "*",
+      'style-src': "'self' 'unsafe-inline' *.googleapis.com",
+      'media-src': "'self'"
     }
   };
 
