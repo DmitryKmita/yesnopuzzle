@@ -1,3 +1,27 @@
-Comment Route
+<div class="y-comment">
+  <div class="y-comment__text">
+      {{text}}
+    <span {{bind-attr class="isAnswerCorrect:y-comment__answer_correct isAnswerIncorrect:y-comment__answer_incorrect isAnswerWaiting:y-comment__answer_waiting"}}>
+      &mdash;
+        {{#if isAnswerCorrect}}
+            {{answer}}
+        {{else}}
+            {{#if isAnswerIncorrect}}
+                {{answer}}
+            {{else}}
+              waiting
+            {{/if}}
+        {{/if}}
+    </span>
+  </div>
 
-{{outlet}}
+  <div class="y-comment__created-on">{{createdOn}}</div>
+  <div class="y-comment__author">by {{author.name}} {{author.surname}}</div>
+
+    {{#unless answer}}
+      <div class="y-comment__controls">
+        <button class="btn success">Yes</button>
+        <button class="btn alert">No</button>
+      </div>
+    {{/unless}}
+</div>

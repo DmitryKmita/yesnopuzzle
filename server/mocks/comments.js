@@ -9,7 +9,7 @@ module.exports = function(app) {
     "author": 2,
     "question": 1,
     "text": "Is elevator working properly?",
-    "answer": null,
+    "answer": "yes",
     "createdOn": new Date()
   });
 
