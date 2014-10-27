@@ -11,9 +11,15 @@
       {{answer}}
   </div>
 
-  <div class="y-question__comments">
-      {{#link-to 'comments' this}}show comments{{/link-to}}
+  <div class="y-question__new-comment">
+      {{#link-to 'comments.new'}}new comment{{/link-to}}
   </div>
+
+    {{#if hasComments}}
+      <div class="y-question__comments">
+          {{#link-to 'comments' this}}show comments{{/link-to}}
+      </div>
+    {{/if}}
 </div>
 
 {{outlet}}

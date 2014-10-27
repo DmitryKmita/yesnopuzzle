@@ -16,6 +16,8 @@ Router.map(function() {
       this.route('delete');
 
       this.resource('comments', function() {
+        this.route('new');
+
         this.resource('comment', { path: "/:comment_id" }, function() {
           this.route('answer');
         });

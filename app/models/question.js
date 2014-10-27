@@ -5,6 +5,7 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   answer: DS.attr('string'),
   author: DS.belongsTo('author', { async: true }),
-  comments: DS.hasMany('comment'),
+  comments: DS.hasMany('comment', { async: true }),
+  commentsCount: DS.attr('number'),
   createdOn: DS.attr('date')
 });
