@@ -1,1 +1,11 @@
-Home Route
+<div class="y-questions">
+  <ul class="y-questions__ul">
+      {{#each}}
+        <li class="y-questions__li">
+            {{#link-to 'question' this}}
+                {{title}}
+            {{/link-to}}
+        </li>
+      {{/each}}
+  </ul>
+</div>
