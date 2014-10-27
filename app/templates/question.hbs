@@ -1,3 +1,19 @@
-Single Question Route
+<div class="y-question">
+  <h1 class="y-question__title">{{title}}</h1>
+
+  <div class="y-question__created">{{createdOn}}</div>
+
+  <div class="y-question__description">
+      {{description}}
+  </div>
+
+  <div class="y-question__answer">
+      {{answer}}
+  </div>
+
+  <div class="y-question__comments">
+      {{#link-to 'comments' this}}show comments{{/link-to}}
+  </div>
+</div>
 
 {{outlet}}
