@@ -20,8 +20,8 @@
 
     {{#unless answer}}
       <div class="y-question__controls">
-        <button class="btn success">Yes</button>
-        <button class="btn alert">No</button>
+        <button {{action 'answer' 'yes'}} class="btn success">Yes</button>
+        <button {{action 'answer' 'no'}} class="btn alert">No</button>
       </div>
     {{/unless}}
 </div>

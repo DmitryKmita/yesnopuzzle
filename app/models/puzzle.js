@@ -4,8 +4,8 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   description: DS.attr('string'),
   answer: DS.attr('string'),
-  author: DS.belongsTo('author', { async: true }),
-  questions: DS.hasMany('question', { async: true }),
+  author: DS.belongsTo('author'),
+  questions: DS.hasMany('question'),
   questionsCount: DS.attr('number'),
   createdOn: DS.attr('date')
 });
