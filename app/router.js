@@ -24,6 +24,7 @@ Router.map(function() {
       });
     });
   });
+  this.route('questions/new');
 });
 
 export default Router;

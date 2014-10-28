@@ -1,1 +1,32 @@
-New Puzzle Route
+<div class="y-puzzle-new">
+  <h2 class="y-puzzle-new__title">New Puzzle</h2>
+
+  <form class="y-form y-puzzle-new__form">
+    {{#if errorMessage}}
+        <div class="y-form-messages">
+          <div class="y-form-messages__error">
+            {{errorMessage}}
+          </div>
+        </div>
+    {{/if}}
+
+    <div class="y-field">
+      <label>Title</label>
+        {{input type="text" value=title}}
+    </div>
+
+    <div class="y-field">
+      <label>Description</label>
+        {{textarea value=description}}
+    </div>
+
+    <div class="y-field">
+      <label>Answer</label>
+        {{textarea value=answer}}
+    </div>
+
+    <div class="y-form__button">
+      <button {{action 'submit'}} class="button success">Create Puzzle</button>
+    </div>
+  </form>
+</div>

@@ -1,13 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  question: null,
+  title: null,
+  description: null,
+  answer: null,
 
   errorMessage: null,
 
   actions: {
     reset: function() {
-      this.set('question', null);
+      this.set('title', null);
+      this.set('description', null);
+      this.set('answer', null);
       this.set('errorMessage', null);
     }
   }

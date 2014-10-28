@@ -3,6 +3,7 @@ module.exports = function(app) {
   var questionsRouter = express.Router();
 
   var questions = require('../data/questions');
+  var lastQuestionId = 3;
 
   questionsRouter.get('/', function(req, res) {
     if (req.query.puzzle_id) {
@@ -16,12 +17,36 @@ module.exports = function(app) {
     }
   });
 
-  questions.forEach(function(question) {
-    questionsRouter.get('/' + question.id, function (req, res) {
-      res.send({
-        "questions": question
-      });
+  questionsRouter.post('/', function (req, res) {
+    var question = req.body.question;
+
+    question.id = ++lastQuestionId;
+    question.createdOn = new Date();
+    question.author = 2;
+
+    questions.push(question);
+
+    res.send({
+      "questions": question
     });
+  });
+
+  questionsRouter.get('/:id', function (req, res) {
+    var record = null;
+
+    questions.forEach(function(question) {
+      if (question.id == req.params.id) {
+        record = question;
+      }
+    });
+
+    if (!record) {
+      res.status(404).send();
+    } else {
+      res.send({
+        "questions": record
+      });
+    }
   });
 
   app.use('/api/questions', questionsRouter);
