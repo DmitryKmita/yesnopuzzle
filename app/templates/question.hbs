@@ -1,25 +1,27 @@
 <div class="y-question">
-  <h1 class="y-question__title">{{title}}</h1>
-
-  <div class="y-question__created">{{createdOn}}</div>
-
-  <div class="y-question__description">
-      {{description}}
+  <div class="y-question__text">
+      {{text}}
+    <span {{bind-attr class="isAnswerCorrect:y-question__answer_correct isAnswerIncorrect:y-question__answer_incorrect isAnswerWaiting:y-question__answer_waiting"}}>
+      &mdash;
+        {{#if isAnswerCorrect}}
+            {{answer}}
+        {{else}}
+            {{#if isAnswerIncorrect}}
+                {{answer}}
+            {{else}}
+              waiting
+            {{/if}}
+        {{/if}}
+    </span>
   </div>
 
-  <div class="y-question__answer">
-      {{answer}}
-  </div>
+  <div class="y-question__created-on">{{createdOn}}</div>
+  <div class="y-question__author">by {{author.name}} {{author.surname}}</div>
 
-  <div class="y-question__new-comment">
-      {{#link-to 'comments.new'}}new comment{{/link-to}}
-  </div>
-
-    {{#if hasComments}}
-      <div class="y-question__comments">
-          {{#link-to 'comments' this}}show comments{{/link-to}}
+    {{#unless answer}}
+      <div class="y-question__controls">
+        <button class="btn success">Yes</button>
+        <button class="btn alert">No</button>
       </div>
-    {{/if}}
+    {{/unless}}
 </div>
-
-{{outlet}}

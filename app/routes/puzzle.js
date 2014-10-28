@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-    return this.store.find('comment', params.comment_id);
+    return this.store.find('puzzle', params.puzzle_id);
   }
 });

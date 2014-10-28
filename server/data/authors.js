@@ -5,8 +5,8 @@ authors.push({
   "email": "ruslan.zavacky@gmail.com",
   "name": "Ruslan",
   "surname": "Zavacky",
-  "questions": [1, 2],
-  "comments": []
+  "puzzles": [1, 2],
+  "questions": []
 });
 
 authors.push({
@@ -14,8 +14,8 @@ authors.push({
   "email": "vasily.pupkin@yesnopuzzle.com",
   "name": "Vasily",
   "surname": "Pupkin",
-  "questions": [3, 4, 5],
-  "comments": [1, 2, 3]
+  "puzzles": [3, 4, 5],
+  "questions": [1, 2, 3]
 });
 
 module.exports = authors;

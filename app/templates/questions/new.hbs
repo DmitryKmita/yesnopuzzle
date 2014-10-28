@@ -1,1 +1,12 @@
-New Question Route
+<div class="y-new-question">
+  <form class="y-form y-new-question__form">
+    <div class="y-field">
+      <label>Question</label>
+        {{input type="text" value=question}}
+    </div>
+
+    <div class="y-form__button">
+      <button {{action 'submit'}} class="btn success">Ask Question</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="y-puzzle">
+  <h1 class="y-puzzle__title">{{title}}</h1>
+
+  <div class="y-puzzle__created">{{createdOn}}</div>
+
+  <div class="y-puzzle__description">
+      {{description}}
+  </div>
+
+  <div class="y-puzzle__answer">
+      {{answer}}
+  </div>
+
+  <div class="y-puzzle__new-question">
+      {{#link-to 'questions.new'}}new question{{/link-to}}
+  </div>
+
+    {{#if hasQuestions}}
+      <div class="y-puzzle__questions">
+          {{#link-to 'questions' this}}show questions{{/link-to}}
+      </div>
+    {{/if}}
+</div>
+
+{{outlet}}

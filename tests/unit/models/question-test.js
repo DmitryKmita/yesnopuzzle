@@ -5,7 +5,7 @@ import {
 
 moduleForModel('question', 'Question', {
   // Specify the other units that are required for this test.
-  needs: ['model:author', 'model:comment']
+  needs: ['model:author', 'model:puzzle']
 });
 
 test('it exists', function() {

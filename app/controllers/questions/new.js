@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  comment: null,
+  question: null,
 
   actions: {
     submit: function() {
