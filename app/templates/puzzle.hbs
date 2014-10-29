@@ -1,7 +1,9 @@
 <div class="y-puzzle">
   <h1 class="y-puzzle__title">{{title}}</h1>
 
-  <div class="y-puzzle__created">{{createdOn}}</div>
+  <div class="y-puzzle__created">
+      {{fa-icon "clock-o"}} {{format-date createdOn}}
+  </div>
 
   <div class="y-puzzle__description">
       {{description}}
@@ -11,15 +13,24 @@
       {{answer}}
   </div>
 
-  <div class="y-puzzle__new-question">
-      {{#link-to 'questions.new'}}new question{{/link-to}}
+  <div class="y-puzzle__controls">
+    <ul class="y-puzzle__controls-ul stack-for-small round secondary button-group">
+        {{#link-to 'questions' this tagName="li" disabled=missingQuestions}}
+          <a {{bind-attr class=":secondary :button hasQuestions::disabled"}}>
+            show questions {{#if hasQuestions}}({{questionsCount}}){{/if}}
+          </a>
+        {{/link-to}}
+
+      <li>
+          {{#link-to 'questions.new' classNames="secondary button"}}new question{{/link-to}}
+      </li>
+    </ul>
   </div>
 
-    {{#if hasQuestions}}
-      <div class="y-puzzle__questions">
-          {{#link-to 'questions' this}}show questions{{/link-to}}
-      </div>
-    {{/if}}
+  <div class="row">
+    <div class="small-12 columns">
+        {{outlet}}
+    </div>
+  </div>
 </div>
 
-{{outlet}}

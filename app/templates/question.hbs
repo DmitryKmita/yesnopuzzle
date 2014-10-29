@@ -1,8 +1,8 @@
 <div class="y-question">
   <div class="y-question__text">
       {{text}}
-    <span {{bind-attr class="isAnswerCorrect:y-question__answer_correct isAnswerIncorrect:y-question__answer_incorrect isAnswerWaiting:y-question__answer_waiting"}}>
-      &mdash;
+
+    <span {{bind-attr class=":label :radius isAnswerCorrect:success isAnswerIncorrect:alert"}}>
         {{#if isAnswerCorrect}}
             {{answer}}
         {{else}}
@@ -15,13 +15,23 @@
     </span>
   </div>
 
-  <div class="y-question__created-on">{{createdOn}}</div>
-  <div class="y-question__author">by {{author.name}} {{author.surname}}</div>
+  <div class="y-question__meta">
+    <div class="y-question__created-on">
+        {{fa-icon "clock-o"}} {{format-date createdOn}}
+    </div>
+    <div class="y-question__author y-author">
+      {{author-name author=author}}
+    </div>
+  </div>
 
     {{#unless answer}}
       <div class="y-question__controls">
-        <button {{action 'answer' 'yes'}} class="btn success">Yes</button>
-        <button {{action 'answer' 'no'}} class="btn alert">No</button>
+        <button {{action 'answer' 'yes'}} class="button small success radius">
+            {{fa-icon 'check' size=2}}
+        </button>
+        <button {{action 'answer' 'no'}} class="button small alert radius">
+            {{fa-icon 'times-circle-o' size=2}}
+        </button>
       </div>
     {{/unless}}
 </div>

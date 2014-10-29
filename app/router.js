@@ -16,15 +16,14 @@ Router.map(function() {
       this.route('delete');
 
       this.resource('questions', function() {
-        this.route('new');
-
         this.resource('question', { path: "/:question_id" }, function() {
           this.route('answer');
         });
       });
+
+      this.resource('questions.new', { path: "/questions/new" });
     });
   });
-  this.route('questions/new');
 });
 
 export default Router;
