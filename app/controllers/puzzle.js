@@ -5,7 +5,7 @@ export default Ember.ObjectController.extend({
     return this.get('questionsCount');
   }.property('questionsCount'),
 
-  missingQuestions: function() {
+  hasNoQuestions: function() {
     return !this.get('questionsCount');
   }.property('questionsCount')
 });

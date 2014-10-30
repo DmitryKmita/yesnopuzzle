@@ -15,7 +15,7 @@
 
   <div class="y-puzzle__controls">
     <ul class="y-puzzle__controls-ul stack-for-small round secondary button-group">
-        {{#link-to 'questions' this tagName="li" disabled=missingQuestions}}
+        {{#link-to 'questions' this tagName="li" disabled=hasNoQuestions}}
           <a {{bind-attr class=":secondary :button hasQuestions::disabled"}}>
             show questions {{#if hasQuestions}}({{questionsCount}}){{/if}}
           </a>
