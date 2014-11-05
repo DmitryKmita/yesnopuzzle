@@ -13,7 +13,7 @@ Demo Ember.js repository for my presentation on Devclub.lv.
 
 ## Running / Development
 
-* `ember server`
+* `ember serve`
 * Visit your app at http://localhost:4200.
 
 ## Presentation
