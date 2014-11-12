@@ -1,6 +1,11 @@
 # Yesnopuzzle
+Example Ember.js application using ember-cli.
 
-Demo Ember.js repository for my presentation on Devclub.lv. 
+![Image of Yaktocat](resources/screenshots/homepage.png)
+
+This application is a bit bigger than simple todo apps. I've tried to structure first commits as application development flow. Application uses only frontend approach and emulates server via ember http-mock.
+
+There are several *kinda problems* limited by ~~mocked server capabilities~~ my lazyness.
 
 ## Versions
 * Ember.js 1.8.0
